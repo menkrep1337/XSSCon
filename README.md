@@ -29,3 +29,9 @@ python3 xsscon.py --help
 
 <img src="images/screenshot.png">
 
+## Roadmap
+
+v0.3B:
+<li> Added custom options ( Such --proxy etc... )</li>
+<li> First launched </li>
+ 
