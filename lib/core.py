@@ -70,7 +70,49 @@ class core:
 					Log.high("Post data: "+str(keys))
 				else:
 					Log.info("This page is safe from XSS (POST) attack but not 100% yet...")
-					
+	
+	@classmethod
+	def get_method_form(self):
+		bsObj=BeautifulSoup(self.body,"html.parser")
+		forms=bsObj.find_all("form",method=True)
+		
+		for form in forms:
+			try:
+				action=form["action"]
+			except KeyError:
+				action=self.url
+				
+			if form["method"].lower().strip() == "get":
+				Log.warning("Target have form with GET method: "+C+urljoin(self.url,action))
+				Log.info("Collecting form input key.....")
+				
+				keys={}
+				for key in form.find_all(["input","textarea"]):
+					try:
+						if key["type"] == "submit":
+							Log.info("Form key name: "+G+key["name"]+N+" value: "+G+"<Submit Confirm>")
+							keys.update({key["name"]:key["name"]})
+				
+						else:
+							Log.info("Form key name: "+G+key["name"]+N+" value: "+G+self.payload)
+							keys.update({key["name"]:self.payload})
+							
+					except Exception as e:
+						Log.info("Internal error: "+str(e))
+						try:
+							Log.info("Form key name: "+G+key["name"]+N+" value: "+G+self.payload)
+							keys.update({key["name"]:self.payload})
+						except KeyError as e:
+							Log.info("Internal error: "+str(e))
+						
+				Log.info("Sending payload (GET) method...")
+				req=self.session.get(urljoin(self.url,action),params=keys)
+				if self.payload in req.text:
+					Log.high("Detected XSS (GET) at "+urljoin(self.url,req.url))
+					Log.high("GET data: "+str(keys))
+				else:
+					Log.info("This page is safe from XSS (GET) attack but not 100% yet...")
+		
 	@classmethod
 	def get_method(self):
 		bsObj=BeautifulSoup(self.body,"html.parser")
@@ -111,9 +153,11 @@ class core:
 		if method >= 2:
 			self.post_method()
 			self.get_method()
+			self.get_method_form()
 			
 		elif method == 1:
 			self.post_method()
 			
 		elif method == 0:
 			self.get_method()
+			self.get_method_form()

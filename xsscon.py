@@ -49,6 +49,8 @@ def start():
 	print(logo)
 	Log.info("Starting XSSCon...")
 	if getopt.u:
+		core.main(getopt.u,getopt.proxy,getopt.user_agent,check(getopt),getopt.method)
+		
 		crawler.crawl(getopt.u,int(getopt.depth),getopt.proxy,getopt.user_agent,check(getopt),getopt.method)
 		
 	elif getopt.single:
