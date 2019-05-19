@@ -1,13 +1,23 @@
-
 <p align="center">
- <img src="images/logo.png" height="250"><br/>
-Simple XSS Scanner made with python 3.7
+ <img src="images/logo.png" height="200"><br/>
+Powerfull Simple XSS Scanner made with python 3.7
 </p>
 ## Installing
 Requirements: <br/>
-<li> bs4 lib </li>
-<li> requests lib </li>
+
+<li> BeautifulSoup4 </li>
+
+```bash
+pip install bs4
+```
+<li> requests </li>
+
+```bash
+pip install requests
+```
 <li> python 3.7 </li>
+<br/>
+Commands:
 
 ```bash
 git clone https://github.com/menkrep1337/XSSCon
@@ -16,6 +26,7 @@ python3 xsscon.py --help
 ```
 ## Usage
 Basic usage:
+
 ```bash
 python3 xsscon.py -u http://testphp.vulnweb.com
 ```
@@ -32,6 +43,6 @@ python3 xsscon.py --help
 ## Roadmap
 
 v0.3B:
+------
 <li> Added custom options ( Such --proxy etc... )</li>
 <li> First launched </li>
- 
