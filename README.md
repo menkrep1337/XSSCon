@@ -1,7 +1,6 @@
 <p align="center">
  <img src="images/logo.png" height="200"><br/>
-Powerfull Simple XSS Scanner made with python 3.7
-</p>
+A powerful XSS scanner made in python 3.7</p>
 
 ## Installing
 
