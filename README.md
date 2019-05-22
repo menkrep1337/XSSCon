@@ -55,6 +55,7 @@ v0.3B Patch:
 
 v0.4B:
 ------
+<li>Improved Error handling</li>
 <li>Now Multiple parameters for GET method is Supported</li>
 
 ## Note
