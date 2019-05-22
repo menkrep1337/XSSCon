@@ -57,5 +57,5 @@ v0.4B:
 <li>Now Multiple parameters for GET method is Supported</li>
 
 ## Note
-Sorry for my bad english 
-
+* Sorry for my bad english 
+* if you run xsscon on the win10 terminal you will get an untidy output
