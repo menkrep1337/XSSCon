@@ -38,6 +38,16 @@ Advanced usage:
 ```bash
 python3 xsscon.py --help
 ```
+
+## Main features
+
+* crawling all links on a website ( crawler engine )
+* post and get forms are supported
+* get method from link is supported
+* many settings that can be customized
+* ETC....
+
+
 ## Screenshot
 
 <img src="images/screenshot.png">
@@ -61,3 +71,4 @@ v0.4B:
 ## Note
 * Sorry for my bad english 
 * if you run xsscon on the win10 terminal you will get an untidy output
+* now it doesn't support DOM
