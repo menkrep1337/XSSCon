@@ -1,14 +1,13 @@
 from lib.helper.helper import *
 from random import randint
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin,urlparse
+from urllib.parse import urljoin,urlparse,parse_qs,urlencode
 from lib.helper.Log import *
 
 class core:
 	
 	@classmethod
-	def generate(self,eff):
-		script="" 		
+	def generate(self,eff):		
 		FUNCTION=[
 			"prompt(5000/200)",
 			"alert(6000/3000)",
@@ -124,15 +123,21 @@ class core:
 				query=urlparse(base).query
 				if query != "":
 					Log.warning("Found link with query: "+G+query+N+" Maybe a vuln XSS point")
+					
 					query_payload=query.replace(query[query.find("=")+1:len(query)],self.payload,1)
 					test=base.replace(query,query_payload,1)
-					Log.info("Query (GET): "+test)
+					
+					query_all=base.replace(query,urlencode({x: self.payload for x in parse_qs(query)}))
+					
+					Log.info("Query (GET) : "+test)
+					Log.info("Query (GET) : "+query_all)
+					
 					_respon=self.session.get(test)
-					if self.payload in _respon.text:
+					if self.payload in _respon.text or self.payload in self.session.get(query_all):
 						Log.high("Detected XSS (GET) at "+_respon.url)
 					else:
 						Log.info("This page is safe from XSS (GET) attack but not 100% yet...")
-
+	
 	@classmethod
 	def main(self,url,proxy,headers,payload,method=2):
 	
@@ -149,7 +154,12 @@ class core:
 			Log.high("Internal error: "+str(e))
 			return
 		
-		Log.info("Connection estabilished "+G+str(ctr.status_code))
+		if ctr.status_code > 400:
+			Log.info("Connection failed "+G+str(ctr.status_code))
+			return 
+		else:
+			Log.info("Connection estabilished "+G+str(ctr.status_code))
+		
 		if method >= 2:
 			self.post_method()
 			self.get_method()
