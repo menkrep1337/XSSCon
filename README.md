@@ -52,6 +52,10 @@ v0.3B Patch:
 ------
 <li>Added support for ( form method GET ) </li>
 
+v0.4B:
+------
+<li>Now Multiple parameters for GET method is Supported</li>
+
 ## Note
 Sorry for my bad english 
 
