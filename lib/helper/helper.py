@@ -30,5 +30,5 @@ logo=G+"""__  ______ ____   ____
  \  /\___ \___ \| |   / _ \| '_ \ %s
  /  \ ___) |__) | |__| (_) | | | | %s
 /_/\_\____/____/ \____\___/|_| |_|
-"""%(R+"{v0.3B}"+G,underline+C+"https://github.com/menkrep1337/XSSCon"+N+G)
+"""%(R+"{v0.4B}"+G,underline+C+"https://github.com/menkrep1337/XSSCon"+N+G)
 	
