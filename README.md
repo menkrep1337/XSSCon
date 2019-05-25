@@ -45,6 +45,7 @@ python3 xsscon.py --help
 * POST and GET forms are supported
 * many settings that can be customized
 * Advanced error handling
+* Multiprocessing support.✔️
 * ETC....
 
 
