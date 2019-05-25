@@ -139,13 +139,13 @@ class core:
 						Log.info("This page is safe from XSS (GET) attack but not 100% yet...")
 	
 	@classmethod
-	def main(self,url,proxy,headers,payload,method=2):
+	def main(self,url,proxy,headers,payload,cookie,method=2):
 	
 		print(W+"*"*15)
 		self.payload=payload
 		self.url=url
 		
-		self.session=session(proxy,headers)
+		self.session=session(proxy,headers,cookie)
 		Log.info("Checking connection to: "+Y+url)	
 		try:
 			ctr=self.session.get(url)

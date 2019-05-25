@@ -19,10 +19,11 @@ underline = "\033[4m"
 agent = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'} 
 line="—————————————————" 
 #####################
-def session(proxies,headers):
+def session(proxies,headers,cookie):
 	r=requests.Session()
 	r.proxies=proxies
 	r.headers=headers
+	r.cookies.update(cookie)
 	return r
 
 logo=G+"""__  ______ ____   ____
@@ -30,5 +31,5 @@ logo=G+"""__  ______ ____   ____
  \  /\___ \___ \| |   / _ \| '_ \ %s
  /  \ ___) |__) | |__| (_) | | | | %s
 /_/\_\____/____/ \____\___/|_| |_|
-"""%(R+"{v0.3B}"+G,underline+C+"https://github.com/menkrep1337/XSSCon"+N+G)
+"""%(R+"{v0.5B}"+G,underline+C+"https://github.com/menkrep1337/XSSCon"+N+G)
 	
