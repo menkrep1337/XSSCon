@@ -22,6 +22,7 @@ Commands:
 
 ```bash
 git clone https://github.com/menkrep1337/XSSCon
+chmod 755 -R XSSCon
 cd XSSCon
 python3 xsscon.py --help 
 ```
@@ -37,6 +38,15 @@ Advanced usage:
 ```bash
 python3 xsscon.py --help
 ```
+
+## Main features
+
+* crawling all links on a website ( crawler engine )
+* POST and GET forms are supported
+* many settings that can be customized
+* ETC....
+
+
 ## Screenshot
 
 <img src="images/screenshot.png">
@@ -52,6 +62,12 @@ v0.3B Patch:
 ------
 <li>Added support for ( form method GET ) </li>
 
-## Note
-Sorry for my bad english 
+v0.4B:
+------
+<li>Improved Error handling</li>
+<li>Now Multiple parameters for GET method is Supported</li>
 
+## Note
+* Sorry for my bad english 
+* if you run xsscon on the win10 terminal you will get an untidy output
+* now it doesn't support DOM
