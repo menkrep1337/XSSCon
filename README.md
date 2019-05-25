@@ -44,6 +44,7 @@ python3 xsscon.py --help
 * crawling all links on a website ( crawler engine )
 * POST and GET forms are supported
 * many settings that can be customized
+* Advanced error handling
 * ETC....
 
 
