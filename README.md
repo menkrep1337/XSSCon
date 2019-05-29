@@ -69,7 +69,7 @@ v0.4B:
 <li>Improved Error handling</li>
 <li>Now Multiple parameters for GET method is Supported</li>
 
-v0.5B:
+v0.5 Release (Final):
 ------
 * Bug fixed
 * Now cookies is supported. (--cookie {}) 
@@ -77,3 +77,4 @@ v0.5B:
 * Sorry for my bad english 
 * if you run xsscon on the win10 terminal you will get an untidy output
 * now it doesn't support DOM
+
