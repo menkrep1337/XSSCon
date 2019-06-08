@@ -1,6 +1,7 @@
 <p align="center">
  <img src="images/logo.png" height="200"><br/>
-A powerful XSS scanner made in python 3.7</p>
+A powerful XSS scanner made in python 3.7<br/><a href="https://menkrep1337.github.io/project/xsscon">See docs</a></p>
+
 
 ## Installing
 
@@ -44,6 +45,8 @@ python3 xsscon.py --help
 * crawling all links on a website ( crawler engine )
 * POST and GET forms are supported
 * many settings that can be customized
+* Advanced error handling
+* Multiprocessing support.✔️
 * ETC....
 
 
@@ -67,7 +70,12 @@ v0.4B:
 <li>Improved Error handling</li>
 <li>Now Multiple parameters for GET method is Supported</li>
 
+v0.5 Release (Final):
+------
+* Bug fixed
+* Now cookies is supported. (--cookie {}) 
 ## Note
 * Sorry for my bad english 
 * if you run xsscon on the win10 terminal you will get an untidy output
 * now it doesn't support DOM
+

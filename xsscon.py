@@ -11,7 +11,7 @@ from random import randint
 from lib.crawler.crawler import *
 epilog="""
 Github: https://www.github.com/menkrep1337/XSSCon
-Version: 0.5 Beta 
+Version: 0.5 Final
 """
 def check(getopt):
 	payload=int(getopt.payload_level)
