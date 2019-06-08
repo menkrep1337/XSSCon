@@ -1,6 +1,6 @@
 <p align="center">
  <img src="images/logo.png" height="200"><br/>
-A powerful XSS scanner made in python 3.7<br/><a href="https://menkrep1337.github.io/project/xsscon"><a></p>
+A powerful XSS scanner made in python 3.7<br/><a href="https://menkrep1337.github.io/project/xsscon">See docs</a></p>
 
 
 ## Installing
