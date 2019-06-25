@@ -3,7 +3,7 @@ XSSCon - 2019/2020
 This project was created by menkrep1337 with 407Aex team. 
 Copyright under the MIT license
 '''
-import requests
+import requests, json
 ##### Warna ####### 
 N = '\033[0m'
 W = '\033[1;37m' 
@@ -23,7 +23,7 @@ def session(proxies,headers,cookie):
 	r=requests.Session()
 	r.proxies=proxies
 	r.headers=headers
-	r.cookies.update(cookie)
+	r.cookies.update(json.loads(cookie))
 	return r
 
 logo=G+"""__  ______ ____   ____
