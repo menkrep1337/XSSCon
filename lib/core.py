@@ -133,7 +133,7 @@ class core:
 					Log.info("Query (GET) : "+query_all)
 					
 					_respon=self.session.get(test)
-					if self.payload in _respon.text or self.payload in self.session.get(query_all):
+					if self.payload in _respon.text or self.payload in self.session.get(query_all).text:
 						Log.high("Detected XSS (GET) at "+_respon.url)
 					else:
 						Log.info("This page is safe from XSS (GET) attack but not 100% yet...")
