@@ -62,7 +62,6 @@ def start():
 Project: XSSCon
 License: MIT
 Author: menkrep1337
-Team: 407 Authentic Exploit
 Last updates: 2019 may 26
 Note: Take your own RISK
 ****************
